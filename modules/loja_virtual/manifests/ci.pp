@@ -1,8 +1,14 @@
 class loja_virtual::ci {
 	include loja_virtual
 
-	package { ['git', 'maven2', 'openjdk-6-jdk', 'rubygems']:
+	package { ['git', 'maven2', 'openjdk-6-jdk']:
 	  ensure => 'installed',
+	}
+
+	class { 'ruby':
+	  ruby_package     => 'ruby1.9.1-full',
+	  rubygems_package => 'rubygems1.9.1',
+	  gems_version     => 'latest',
 	}
 
 	package { ['fpm', 'bundler']:
