@@ -32,7 +32,9 @@ class loja_virtual::ci {
 	    'javadoc',
 	    'mailer',
 	    'greenballs',
-	    'ws-cleanup'
+	    'ws-cleanup',
+	    'parametrized-trigger',
+	    'copyartifact',
 	]
 
 	jenkins::plugin { $plugins: }
